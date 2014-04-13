@@ -1,0 +1,9 @@
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}"/>
+{% if latest_poll_list %}
+{% for poll in latest_poll_list%}
+{{poll.question}}|{{poll.pub_date}}
+{% endfor %}
+{% else %}
+<h1>No polls are available.<h1>
+{% endif %}
